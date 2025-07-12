@@ -22,7 +22,7 @@
             // catch (ValidationException ex)
             // {
             //     // Log the exception (optional)
-            //     _logger.LogError(ex, "Erro de validação");
+            //     _logger.LogError(ex, "Validation error");
 
             //     // Format the response with validation errors
             //     var validationErrors = ex.Errors.Select(e => new { Field = e.PropertyName, Message = e.ErrorMessage });
@@ -41,11 +41,11 @@
             catch (Exception ex)
             {
                 // For other exceptions, you can proceed with the default handling
-                _logger.LogError(ex, "Erro inesperado");
+                _logger.LogError(ex, "Unexpected error");
 
                 var response = _env.IsDevelopment()
                     ? new { message = ex.Message, stackTrace = ex.StackTrace }
-                    : new { message = "Ocorreu um erro interno no servidor.", stackTrace = (string?)null };
+                    : new { message = "An internal server error occurred.", stackTrace = (string?)null };
 
                 context.Response.StatusCode = StatusCodes.Status500InternalServerError;
                 context.Response.ContentType = "application/json";

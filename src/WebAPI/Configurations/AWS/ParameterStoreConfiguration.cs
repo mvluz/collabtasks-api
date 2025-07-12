@@ -34,8 +34,8 @@
                     var value = await _parameterStoreService.GetParameterAsync(param.Value);
                     if (string.IsNullOrWhiteSpace(value))
                     {
-                        _logger.LogError($"Parâmetro obrigatório '{param.Key}' está ausente ou vazio.");
-                        throw new Exception($"Parâmetro obrigatório '{param.Key}' está ausente ou vazio.");
+                        _logger.LogError($"Required parameter '{param.Key}' is missing or empty.");
+                        throw new Exception($"Required parameter '{param.Key}' is missing or empty.");
                     }
 
                     parameterValues[param.Key] = value;
@@ -51,7 +51,7 @@
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "Erro ao carregar parâmetros do Parameter Store.");
+                _logger.LogError(ex, "Error loading parameters from Parameter Store.");
                 throw;
             }
         }

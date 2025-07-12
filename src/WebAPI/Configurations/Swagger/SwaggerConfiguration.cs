@@ -12,7 +12,7 @@ namespace WebAPI.Configurations.Swagger
                 {
                     Title = "Collab Tasks API v1",
                     Version = "v1",
-                    Description = "API Collab Tasks Versão 1",
+                    Description = "API Collab Tasks v1",
                 });
 
                 // c.SwaggerDoc("v2", new OpenApiInfo
@@ -25,7 +25,7 @@ namespace WebAPI.Configurations.Swagger
                 c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
                 {
                     In = ParameterLocation.Header,
-                    Description = "Por favor, insira o token JWT no campo abaixo (Bearer {seu token})",
+                    Description = "Please enter the JWT token in the field below (Bearer {your token})",
                     Name = "Authorization",
                     Type = SecuritySchemeType.ApiKey,
                     Scheme = "Bearer"
